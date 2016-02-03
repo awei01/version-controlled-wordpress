@@ -1,7 +1,7 @@
 {
-    "name": "awei01/robertcastagna.com",
-    "description": "Robert Castagna's Wedding Photography Site",
-    "license": "proprietary",
+    "name": "awei01/versioned-wordpress",
+    "description": "Version controlled wordpress boilerplate",
+    "license": "MIT",
     "type": "project",
     "authors": [
         {
