@@ -1,8 +1,8 @@
 {
     "name": "awei01/version-controlled-wordpress",
     "description": "Version controlled wordpress boilerplate",
+    "keywords": ["wordpress", "version control"],
     "license": "MIT",
-    "version": "0.0.1",
     "type": "project",
     "authors": [
         {
@@ -28,5 +28,8 @@
             "wp-plugins/{$name}": ["type:wordpress-plugin"],
             "wp-themes/{$name}": ["type:wordpress-theme"]
         }
+    },
+    "config": {
+    	"preferred-install": "dist"
     }
 }
