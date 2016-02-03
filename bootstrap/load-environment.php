@@ -12,12 +12,6 @@ $environment->load();
 // Ensure keys to be set and not empty
 $environment->required([
 	// Database stuff
-	'DB_NAME',
-	'DB_USER',
-	'DB_PASSWORD',
-	'DB_HOST',
-	'DB_CHARSET',
-	// SQLite
 	'DB_FILE',
 
 	// Salts/Keys
@@ -33,8 +27,6 @@ $environment->required([
 
 // Ensure keys but empty are allowed
 $environment->required([
-	'DB_COLLATE',
-
 	// SQLite
 	'USE_MYSQL',
 	'DB_DIR',
