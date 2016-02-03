@@ -24,7 +24,8 @@
     "extra": {
         "wordpress-install-dir": "wp",
         "installer-paths": {
-            "wp-plugins/{$name}": ["type:wordpress-plugin"]
+            "wp-plugins/{$name}": ["type:wordpress-plugin"],
+            "wp-themes/{$name}": ["type:wordpress-theme"]
         }
     }
 }
