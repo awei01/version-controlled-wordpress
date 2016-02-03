@@ -1,0 +1,28 @@
+{
+    "name": "awei01/robertcastagna.com",
+    "description": "Robert Castagna's Wedding Photography Site",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "awei",
+            "email": "awei01@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url" : "http://wpackagist.org"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": ">=4.4.2",
+        "josegonzalez/dotenv": "^2.0"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp",
+        "installer-paths": {
+            "wp-plugins/{$name}": ["type:wordpress-plugin"]
+        }
+    }
+}

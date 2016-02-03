@@ -1,0 +1,10 @@
+# Configuration
+.env
+
+# Composer stuff
+vendor
+wp
+
+# System files
+.DS_Store
+
