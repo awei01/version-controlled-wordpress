@@ -4,6 +4,7 @@
 # Composer stuff
 vendor
 wp
+wp-plugins
 
 # System files
 .DS_Store
