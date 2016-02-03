@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '/bootstrap/autoload.php';
-require __DIR__ . '/bootstrap/environment.php';
 require __DIR__ . '/bootstrap/settings.php';
 
 // ** MySQL settings - You can get this info from your web host ** //
@@ -64,6 +63,17 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', $_ENV['WP_DEBUG']);
 
+/*
+ |----------------------------------
+ | Check to see if we're hitting the check.php
+ | to do a simple view of our defined constants
+ | if so, then just stop doing WP scripts
+ |----------------------------------
+ */
+if ($_SERVER['SCRIPT_FILENAME'] === __DIR__ . '/public/check.php') {
+	return;
+}
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
@@ -72,4 +82,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
