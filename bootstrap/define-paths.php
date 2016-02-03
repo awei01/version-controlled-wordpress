@@ -21,3 +21,7 @@ define( 'WP_CONTENT_URL', WP_HOME . '/content' );
 // set the plugins directory
 define( 'WP_PLUGIN_DIR', realpath(ROOT_DIR . 'public/content/plugins' ));
 define( 'WP_PLUGIN_URL', WP_HOME . '/content/plugins' );
+
+// set the uploads directory
+define('UPLOAD_STORAGE_FOLDER', getenv('UPLOAD_STORAGE_FOLDER') ?: ROOT_DIR . 'storage/uploads');
+define('UPLOAD_URL_PATH', getenv('UPLOAD_URL_PATH') ?: 'uploads');

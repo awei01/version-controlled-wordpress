@@ -34,7 +34,12 @@ $environment->required([
 // Ensure keys but empty are allowed
 $environment->required([
 	'DB_COLLATE',
+
 	// SQLite
 	'USE_MYSQL',
 	'DB_DIR',
+
+	// upload folder configuration
+	'UPLOAD_STORAGE_FOLDER',
+	'UPLOAD_URL_PATH',
 ]);
