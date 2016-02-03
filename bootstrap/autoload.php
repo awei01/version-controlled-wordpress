@@ -1,3 +1,3 @@
 <?php
 // Autoload composer dependencies
-require __DIR__ . '/../vendor/autoload.php';
+require ROOT_DIR . 'vendor/autoload.php';

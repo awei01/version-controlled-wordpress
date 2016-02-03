@@ -14,18 +14,10 @@ define('WP_HOME', $server);
  | Map urls to our symbolic links
  |----------------------------------
  */
-$cwd = dirname(__FILE__);
-
 // set the content directory
-if (!defined('WP_CONTENT_DIR')) {
-	define( 'WP_CONTENT_DIR', realpath($cwd . '/../public/content' ));
-}
-define( 'WP_CONTENT_URL', $server . '/content' );
+define( 'WP_CONTENT_DIR', realpath(ROOT_DIR . 'public/content' ));
+define( 'WP_CONTENT_URL', WP_HOME . '/content' );
 
 // set the plugins directory
-if (!defined('WP_PLUGIN_DIR')) {
-	define( 'WP_PLUGIN_DIR', realpath($cwd . '/../public/content/plugins' ));
-}
-define( 'WP_PLUGIN_URL', $server . '/content/plugins' );
-
-define('WP_POST_REVISIONS', 2);
+define( 'WP_PLUGIN_DIR', realpath(ROOT_DIR . 'public/content/plugins' ));
+define( 'WP_PLUGIN_URL', WP_HOME . '/content/plugins' );

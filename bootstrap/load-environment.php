@@ -4,11 +4,10 @@
  | use Dotenv plugin to get credentials from environment
  |----------------------------------
  */
-$environment = new Dotenv\Dotenv(__DIR__ . '/..');
+$environment = new Dotenv\Dotenv(ROOT_DIR);
 
 // Load the variables
 $environment->load();
-
 
 // Ensure keys to be set and not empty
 $environment->required([
@@ -18,6 +17,8 @@ $environment->required([
 	'DB_PASSWORD',
 	'DB_HOST',
 	'DB_CHARSET',
+	// SQLite
+	'DB_FILE',
 
 	// Salts/Keys
 	'AUTH_KEY',
@@ -33,5 +34,7 @@ $environment->required([
 // Ensure keys but empty are allowed
 $environment->required([
 	'DB_COLLATE',
-	'WP_DEBUG',
+	// SQLite
+	'USE_MYSQL',
+	'DB_DIR',
 ]);
