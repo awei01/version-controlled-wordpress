@@ -1,11 +1,12 @@
 # Configuration
 .env
 
-# Composer stuff
+# Composer managed dependencies
 composer.lock
 vendor
 wp
 wp-plugins
+wp-themes
 
 # System files
 .DS_Store
