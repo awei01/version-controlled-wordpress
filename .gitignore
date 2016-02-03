@@ -2,6 +2,7 @@
 .env
 
 # Composer stuff
+composer.lock
 vendor
 wp
 wp-plugins
