@@ -2,11 +2,10 @@
 require __DIR__ . '/../wp/wp-load.php';
 
 if ($_GET['check'] !== DB_PASSWORD) {
-	// some basic security checking
-	return;
+	echo '<h1>Move along; there is nothing to see here</h1>';
+	exit();
 }
 ?>
-
 <h1>Settings</h1>
 <pre>
 <?php
