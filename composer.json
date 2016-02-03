@@ -17,7 +17,9 @@
     ],
     "require": {
         "johnpbloch/wordpress": ">=4.4.2",
-        "josegonzalez/dotenv": "^2.0"
+        "wpackagist-plugin/disable-wordpress-updates": "1.4.7",
+        "wpackagist-plugin/sqlite-integration": "1.8.1",
+        "vlucas/phpdotenv": "^2.2"
     },
     "extra": {
         "wordpress-install-dir": "wp",

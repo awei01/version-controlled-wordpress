@@ -1,12 +1,19 @@
 <?php
-// disable stupid auto update
-define('DISABLE_WP_CRON', true);
-
+/*
+ |----------------------------------
+ | Set the url to the current server
+ |----------------------------------
+ */
 $server = 'http://' . $_SERVER['SERVER_NAME'];
 // shim the URL
 define('WP_SITEURL', $server . '/wp');
 define('WP_HOME', $server);
 
+/*
+ |----------------------------------
+ | Map urls to our symbolic links
+ |----------------------------------
+ */
 $cwd = dirname(__FILE__);
 
 // set the content directory

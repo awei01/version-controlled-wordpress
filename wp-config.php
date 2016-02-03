@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/bootstrap/autoload.php';
+require __DIR__ . '/bootstrap/load-environment.php';
 require __DIR__ . '/bootstrap/settings.php';
 
 // ** MySQL settings - You can get this info from your web host ** //
