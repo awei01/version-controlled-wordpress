@@ -2,6 +2,7 @@
     "name": "awei01/version-controlled-wordpress",
     "description": "Version controlled wordpress boilerplate",
     "license": "MIT",
+    "version": "0.0.1",
     "type": "project",
     "authors": [
         {
