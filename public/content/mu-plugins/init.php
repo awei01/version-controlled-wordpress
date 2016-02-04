@@ -11,25 +11,23 @@
  */
 
 
-function customize_filters() {
-	// override the default upload folder?
+function on_plugins_loaded() {
+	// check disabling of automitic updates
+	if (getenv('DISABLE_AUTOMATIC_UPDATES')) {
+		disable_automatic_updates();
+		// remove the Update menu item in admin interface
+		add_action('admin_menu', 'remove_update_menu_item');
+	}
+	// change the upload folder
 	if (getenv('OVERRIDE_UPLOAD_FOLDER')) {
 		add_filter('upload_dir', 'override_upload_dir');
 	}
 }
 
-function on_plugins_loaded() {
-	// check disabling of automitic updates
-	if (getenv('DISABLE_AUTOMATIC_UPDATES')) {
-		disable_automatic_updates();
-	}
-	customize_filters();
-}
-
 function on_admin_init() {
 	// remove the plugins menu item
 	if (getenv('REMOVE_PLUGINS_MENU')) {
-		remove_plugins_menu();
+		add_action('admin_menu', 'remove_plugins_menu');
 	}
 }
 
