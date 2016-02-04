@@ -23,6 +23,6 @@ function my_setup() {
 	wp_upload_dir();
 }
 
-add_action( 'after_setup_theme', 'my_setup' );
+add_action( 'admin_init', 'my_setup' );
 
 */
