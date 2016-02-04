@@ -19,11 +19,21 @@ function customize_filters() {
 }
 
 function on_plugins_loaded() {
+	customize_filters();
+}
+
+function on_admin_init() {
 	// check disabling of automitic updates
 	if (getenv('DISABLE_AUTOMATIC_UPDATES')) {
 		disable_automatic_updates();
 	}
-	customize_filters();
+	// remove the plugins menu item
+	if (getenv('REMOVE_PLUGINS_MENU')) {
+		remove_plugins_menu();
+	}
 }
+
+// now actually add the hooks
 add_action('plugins_loaded', 'on_plugins_loaded');
+add_action('admin_init', 'on_admin_init');
 
