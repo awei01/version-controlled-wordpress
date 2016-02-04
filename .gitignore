@@ -5,6 +5,7 @@
 composer.lock
 vendor
 wp
+!public/wp
 wp-plugins
 wp-themes
 
