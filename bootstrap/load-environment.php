@@ -34,4 +34,9 @@ $environment->required([
 	// upload folder configuration
 	'UPLOAD_STORAGE_FOLDER',
 	'UPLOAD_URL_PATH',
+
+	// disabling web-based file editing
+	'DISALLOW_FILE_EDIT',
+	'DISALLOW_FILE_MODS',
+
 ]);

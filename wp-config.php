@@ -10,6 +10,7 @@ require ROOT_DIR . 'bootstrap/load-environment.php';
 require ROOT_DIR . 'bootstrap/configure-database.php';
 require ROOT_DIR . 'bootstrap/set-security-keys.php';
 require ROOT_DIR . 'bootstrap/define-paths.php';
+require ROOT_DIR . 'bootstrap/configure-ui.php';
 
 /**
  * For developers: WordPress debugging mode.

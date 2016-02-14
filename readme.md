@@ -49,6 +49,7 @@ When using the above step on a virtual machine, I have encountered issues with t
 * Copy and edit your `server/apache.example.conf` into your Apache `sites-enabled`
 * Restart Apache
 * Browse to your domain and you should get the Wordpress installation page.
+* The default location for Wordpress admin is `http://<domain>/wp/wp-admin`
 
 
 ## Required Symlinks
