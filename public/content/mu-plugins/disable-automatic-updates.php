@@ -7,5 +7,5 @@ function remove_update_menu_item() {
 // function to disable automatic updates
 function disable_automatic_updates() {
 	// leverage plugin and activate it
-	require(ROOT_DIR . 'wp-plugins/disable-wordpress-updates/disable-updates.php');
+	require_once(ROOT_DIR . 'wp-plugins/disable-wordpress-updates/disable-updates.php');
 }
