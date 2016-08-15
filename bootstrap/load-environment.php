@@ -10,7 +10,7 @@ $environment = new Dotenv\Dotenv(ROOT_DIR);
 $environment->load();
 
 // Ensure keys to be set and not empty
-$environment->required([
+$environment->required(array(
 	// Database stuff
 	'DB_FILE',
 
@@ -23,10 +23,10 @@ $environment->required([
 	'SECURE_AUTH_SALT',
 	'LOGGED_IN_SALT',
 	'NONCE_SALT',
-])->notEmpty();
+))->notEmpty();
 
 // Ensure keys but empty are allowed
-$environment->required([
+$environment->required(array(
 	// SQLite
 	'USE_MYSQL',
 	'DB_DIR',
@@ -34,4 +34,9 @@ $environment->required([
 	// upload folder configuration
 	'UPLOAD_STORAGE_FOLDER',
 	'UPLOAD_URL_PATH',
-]);
+
+	// disabling web-based file editing
+	'DISALLOW_FILE_EDIT',
+	'DISALLOW_FILE_MODS',
+
+));

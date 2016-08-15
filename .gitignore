@@ -7,7 +7,8 @@ vendor
 wp
 !public/wp
 wp-plugins
-wp-themes
+### we'll manage .gitignore within wp-themes so we can save default theme
+# wp-themes
 
 # System files
 .DS_Store
