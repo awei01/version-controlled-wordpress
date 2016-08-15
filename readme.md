@@ -9,7 +9,7 @@ Note that on Windows environments, symlinks are kind of a pain to accomplish. Yo
 
 ## Motivation
 
-Wordpress was born in an age when FTP was the best tool publish websites. It's primarily intended for designers and not developers. As a result, maintenance and version control are a nightmare. This repository seeks to mitigate some of the headaches a developer may encounter when developing and maintaining a Wordpress installation.
+Wordpress was born in an age when FTP was the best tool used to publish websites. It was primarily intended for designers and not developers. As a result, maintenance and version control are a nightmare. This repository seeks to mitigate some of the headaches a developer may encounter when developing and maintaining a Wordpress installation.
 
 This repository assumes that you are technically proficient enough to find your way around a server via a command prompt.
 
@@ -18,7 +18,7 @@ This repository assumes that you are technically proficient enough to find your 
 
 * A webserver: While any server should technically work with this codebase, I'm assuming Apache and provide a sample config file. `apt-get install apache2`
 * PHP >5.6: While earlier versions of PHP may work, I've developed this boilerplate using PHP 5.6.17-3. `apt-get install php5`
-* SQLite PDO driver: There is assume MySQL database. If you really want MySQL, there are ways to re-enable it. `apt-get install php5-sqlite`
+* SQLite PDO driver: `apt-get install php5-sqlite` This overrides the default MySQL database. If you really want MySQL, there are ways to re-enable it.
 * Git: A version control tool. `apt-get install git`
 * Composer: A PHP package manager. [Installation instructions](https://getcomposer.org/download/)
 
