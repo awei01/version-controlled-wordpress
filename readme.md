@@ -16,14 +16,11 @@ This repository assumes that you are technically proficient enough to find your 
 
 ## System Requirements
 
-* A webserver: While any server should technically work with this codebase, I'm assuming Apache and provide a sample config file. `apt-get install apache2`
+Note: All of the following commands are for Debian based systems.
+
+* A webserver: While any server should technically work with this codebase, I'm assuming Apache and provide a sample config file in `/server/apache.example.conf`. To install: `apt-get install apache2`
 * PHP >5.6: While earlier versions of PHP may work, I've developed this boilerplate using PHP 5.6.17-3. `apt-get install php5`
-<<<<<<< HEAD
 * SQLite PDO driver: `apt-get install php5-sqlite` This overrides the default MySQL database. If you really want MySQL, there are ways to re-enable it.
-=======
-* SQLite PDO driver: There is assume MySQL database. If you really want MySQL, there are ways to re-enable it. `apt-get install php5-sqlite`
-* SQLite command line utility (optional): `apt-get install sqlite3`
->>>>>>> 7a022aeee21bf302fa9f49609f0315a36236d6fd
 * Git: A version control tool. `apt-get install git`
 * Composer: A PHP package manager. [Installation instructions](https://getcomposer.org/download/)
 
