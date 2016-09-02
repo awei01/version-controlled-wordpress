@@ -12,6 +12,10 @@ function automate_plugins_management() {
   // auto enable all the plugins
   $plugins = array_keys(get_plugins());
   $active = get_option('active_plugins');
+  if (!is_array($active)) {
+    // plugins not loaded yet or DB not ready
+    return;
+  }
   foreach ($plugins as $plugin) {
     $plugin = plugin_basename($plugin);
     if (!in_array($plugin, $active)) {
