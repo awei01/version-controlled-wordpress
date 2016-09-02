@@ -15,3 +15,10 @@ function override_upload_dir($settings) {
 	$result = array_merge($settings, compact('path', 'url', 'subdir', 'basedir', 'baseurl'));
 	return $result;
 }
+
+function override_upload_folder() {
+	if (!getenv('OVERRIDE_UPLOAD_FOLDER')) {
+		return;
+	}
+	add_filter('upload_dir', 'override_upload_dir');
+}
