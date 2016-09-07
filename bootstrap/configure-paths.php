@@ -21,3 +21,11 @@ define( 'WP_CONTENT_URL', WP_HOME . '/content' );
 // set the plugins directory
 define( 'WP_PLUGIN_DIR', realpath(ROOT_DIR . 'public/content/plugins' ));
 define( 'WP_PLUGIN_URL', WP_HOME . '/content/plugins' );
+
+/*
+ |----------------------------------
+ | Define our paths
+ |----------------------------------
+ */
+// set the cache directory
+define('FILE_CACHE_STORAGE_FOLDER', getenv('FILE_CACHE_STORAGE_FOLDER') ?: realpath(ROOT_DIR . 'storage/cache'));
