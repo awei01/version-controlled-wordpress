@@ -35,8 +35,19 @@ $environment->required(array(
 	'UPLOAD_STORAGE_FOLDER',
 	'UPLOAD_URL_PATH',
 
+	/*
+		|--------------------------
+		| core wordpress variables
+		|--------------------------
+	*/
 	// disabling web-based file editing
 	'DISALLOW_FILE_EDIT',
 	'DISALLOW_FILE_MODS',
+	// show debug
+	'WP_DEBUG',
+	// number of post revisions
+	'WP_POST_REVISIONS',
+	// disable cron
+	'DISABLE_WP_CRON',
 
 ));

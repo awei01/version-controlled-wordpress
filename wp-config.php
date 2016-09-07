@@ -8,32 +8,13 @@ define('ROOT_DIR', __DIR__ . '/');
 require ROOT_DIR . 'bootstrap/autoload.php';
 require ROOT_DIR . 'bootstrap/load-environment.php';
 require ROOT_DIR . 'bootstrap/configure-database.php';
-require ROOT_DIR . 'bootstrap/set-security-keys.php';
-require ROOT_DIR . 'bootstrap/define-paths.php';
-require ROOT_DIR . 'bootstrap/configure-ui.php';
+require ROOT_DIR . 'bootstrap/configure-security.php';
+require ROOT_DIR . 'bootstrap/configure-paths.php';
+require ROOT_DIR . 'bootstrap/configure-environment.php';
 
-/**
- * For developers: WordPress debugging mode.
- *
- * For information on other constants that can be used for debugging,
- * visit the Codex.
- *
- * @link https://codex.wordpress.org/Debugging_in_WordPress
- */
-define('WP_DEBUG', getenv('WP_DEBUG'));
+// Now, include a developer configured environment file to load additional env settings
+require ROOT_DIR . 'configure/environment.php';
 
-/*
- |----------------------------------
- | Check to see if we're hitting the check.php
- | to do a simple view of our defined constants
- | if so, then just stop doing WP scripts
- |----------------------------------
- */
-if ($_SERVER['SCRIPT_FILENAME'] === ROOT_DIR . 'public/check.php') {
-	return;
-}
-
-/* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )

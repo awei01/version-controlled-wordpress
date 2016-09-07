@@ -10,8 +10,8 @@
 
  */
 
-// first, load developer configuration
-require ROOT_DIR . '/configure/load.php';
+// first, load developer hooks
+require ROOT_DIR . '/configure/hooks.php';
 
 function on_plugins_loaded() {
 	// check disabling of automitic updates
