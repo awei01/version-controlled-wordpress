@@ -28,4 +28,7 @@ define( 'WP_PLUGIN_URL', WP_HOME . '/content/plugins' );
  |----------------------------------
  */
 // set the cache directory
-define('FILE_CACHE_STORAGE_FOLDER', getenv('FILE_CACHE_STORAGE_FOLDER') ?: realpath(ROOT_DIR . 'storage/cache'));
+define('FILE_CACHE_STORAGE_FOLDER', getenv('FILE_CACHE_STORAGE_FOLDER') ?: ROOT_DIR . 'storage/cache');
+// set the upload folder directory and url path
+define('UPLOAD_STORAGE_FOLDER', getenv('UPLOAD_STORAGE_FOLDER') ?: ROOT_DIR . 'storage/uploads');
+define('UPLOAD_URL_PATH', getenv('UPLOAD_URL_PATH') ?: 'uploads');
