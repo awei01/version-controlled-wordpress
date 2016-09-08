@@ -13,6 +13,17 @@ Wordpress was born in an age when FTP was the best tool used to publish websites
 
 This repository assumes that you are technically proficient enough to find your way around a server via a command prompt.
 
+## Default Configuration
+
+All the following configurations can be disabled via the `.env` file
+
+* File-based caching: Store cache in the file system `storage/cache` instead of your `wp_options` table.
+* File-based database: Now you can version control your blog content. You don't have to export/import a mysql dump.
+* Upload folder outside of `wp-content`: Your `uploads` folder is located outside of `wp-content`. This way, you can version control your uploads.
+* Automated plugin management: Manage your plugins via `composer.json` without relying on the web-based installation process.
+* Disable automated updates: Core, plugins and themes updates are disabled, saving database read/writes. You now have finer control over versioning via `composer.json`.
+* Suppress admin menu items and widgets: Themes and plugins menu items are hidden by default since they're now managed via `composer.json`. Certain dashboard widgets are removed by default.
+
 
 ## System Requirements
 
@@ -76,6 +87,15 @@ These can be found on http://wpackagist.org/ or http://wordpress.org/plugins
 * `johnpbloch/wordpress`: Core module to manage Wordpress through Composer.
 * `disable-all-wp-updates`: To prevent wordpress from checking for newer versions. http://wordpress.org/plugins/disable-all-wp-updates/
 * `sqlite-integration`: So we can check in a flat file for the database. https://wordpress.org/plugins/sqlite-integration/
+
+## Installing plugins/themes
+Plugins and themes are now managed via the `composer.json` file.
+
+* Use http://wpackagist.org to locate your plugin or theme and add it to the `require` section of `composer.json`.
+* Run `composer update` from the command line to install the new dependencies.
+* If you've installed a plugin and you're using file-based caching, you'll need to delete the cache first: `rm -rf storage/cache/*`
+* Browse to your site again and your new plugins will be activated.
+
 
 
 ## Suggestions and Pull Requests are welcomed
