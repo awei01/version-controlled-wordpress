@@ -18,11 +18,12 @@
     ],
     "require": {
         "vlucas/phpdotenv": "2.4",
-        "johnpbloch/wordpress": "4.6.1",
-        "wpackagist-plugin/sqlite-integration": "1.8.1",
         "illuminate/cache": "^5.0",
         "illuminate/filesystem": "^5.0",
-        "symfony/var-dumper": "^2.8"
+        "symfony/var-dumper": "^2.8",
+        "johnpbloch/wordpress": "4.6.1",
+        "wpackagist-plugin/sqlite-integration": "1.8.1",
+        "wpackagist-plugin/disable-all-wp-updates": "1.0.1"
     },
     "extra": {
         "wordpress-install-dir": "wp",
