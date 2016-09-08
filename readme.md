@@ -57,6 +57,7 @@ When using the above step on a virtual machine, I have encountered issues with t
 
 * `public/wp` points to `wp` for wordpress core files
 * `public/content/db.php` points to `wp-plugins/sqlite-integration/db.php` to use SQLite instead of MySQL
+* `public/content/object-cache.php` points to `modules/cache/object-cache.php` to use file-based caching
 * `public/content/plugins` points to `/wp-plugins` for Composer managed wordpress plugins
 * `public/uploads` to `storage/uploads` for uploaded media
 
@@ -64,13 +65,16 @@ When using the above step on a virtual machine, I have encountered issues with t
 ## Composer Managed Modules
 
 * `vlucas/phpdotenv`: Allow loading environment specific configurations via flat file. https://packagist.org/packages/vlucas/phpdotenv
-
+* `illuminate/cache`: Allow for file-based caching
+* `illuminate/filesystem`: Allow for file-based caching
+* `symfony/var-dumper`: Supporting modules for `illuminate/cache`
 
 ## Composer Managed Wordpress Plugins
 
 These can be found on http://wpackagist.org/ or http://wordpress.org/plugins
 
-* `disable-wordpress-updates`: To prevent wordpress from checking for newer versions. http://wordpress.org/plugins/disable-wordpress-updates/
+* `johnpbloch/wordpress`: Core module to manage Wordpress through Composer.
+* `disable-all-wp-updates`: To prevent wordpress from checking for newer versions. http://wordpress.org/plugins/disable-all-wp-updates/
 * `sqlite-integration`: So we can check in a flat file for the database. https://wordpress.org/plugins/sqlite-integration/
 
 
