@@ -10,6 +10,8 @@ loaded.
 We're keeping this file separate from our Cache object definition
 for better separation of concers.
 
+wp_init_config() is the only excluded method
+
  |-------------------------------------------------------------
  */
 
@@ -163,10 +165,10 @@ function wp_cache_incr( $key, $offset = 1, $group = '' ) {
  *
  * @global WP_Object_Cache $wp_object_cache
  */
-function wp_cache_init() {
+/*function wp_cache_init() {
   $GLOBALS['wp_object_cache'] = new WP_Object_Cache();
 }
-
+*/
 /**
  * Replaces the contents of the cache with new data.
  *

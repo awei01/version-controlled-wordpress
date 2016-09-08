@@ -1,1 +1,1 @@
-../../wp-plugins/sqlite-integration/db.php
+../../modules/sqlite/init.php

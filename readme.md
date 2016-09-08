@@ -67,8 +67,8 @@ When using the above step on a virtual machine, I have encountered issues with t
 ## Required Symlinks
 
 * `public/wp` points to `wp` for wordpress core files
-* `public/content/db.php` points to `wp-plugins/sqlite-integration/db.php` to use SQLite instead of MySQL
-* `public/content/object-cache.php` points to `modules/cache/object-cache.php` to use file-based caching
+* `public/content/db.php` points to `modules/sqlite/init.php` to use SQLite instead of MySQL
+* `public/content/object-cache.php` points to `modules/file-cache/init.php` to use file-based caching
 * `public/content/plugins` points to `/wp-plugins` for Composer managed wordpress plugins
 * `public/uploads` to `storage/uploads` for uploaded media
 

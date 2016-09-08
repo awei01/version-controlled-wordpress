@@ -1,1 +1,1 @@
-../../modules/cache/object-cache.php
+../../modules/file-cache/init.php

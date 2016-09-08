@@ -447,15 +447,14 @@ class WP_Object_Cache {
    *
      * @global int $blog_id Global blog ID.
    */
-  public function __construct() {
+  public function __construct($path) {
     global $blog_id;
 
     $this->multisite = is_multisite();
     $this->blog_prefix =  $this->multisite ? $blog_id . ':' : '';
 
-    $path = realpath(FILE_CACHE_STORAGE_FOLDER);
     if (!$path) {
-      throw new Exception('Constant [FILE_CACHE_STORAGE_FOLDER] is invalid');
+      throw new Exception('Invalid storage path for cache');
     }
 
     $filesystem = new \Illuminate\Filesystem\Filesystem();

@@ -27,15 +27,6 @@ define('DB_CHARSET', getenv('DB_CHARSET'));
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', getenv('DB_COLLATE') ?: '');
 
-/*
- |------------------------------
- | SQLite integration
- |------------------------------
- */
-define('USE_MYSQL', getenv('USE_MYSQL'));
-define('DB_FILE', getenv('DB_FILE'));
-define('DB_DIR', getenv('DB_DIR') ?: ROOT_DIR . 'storage/database/');
-
 /**
  * WordPress Database Table prefix.
  *
