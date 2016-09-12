@@ -1,17 +1,19 @@
 <?php
 function override_upload_folder() {
-	if (!getenv('OVERRIDE_UPLOAD_FOLDER')) {
+	if (!getenv('UPLOADS_PATH__enabled')) {
 		return;
 	}
-	add_filter('upload_dir', function() {
+	$path = getenv('UPLOADS_PATH__storage_path') ?: ROOT_DIR . 'storage/uploads';
+	if (!$basedir = realpath($path)) {
+		throw new Exception('Invalid storage path for uploads');
+	}
+	$url_path = getenv('UPLOADS_PATH__url_path') ?: 'uploads';
+
+	add_filter('upload_dir', function($settings) use ($basedir, $url_path) {
 		$subdir = '';
 		if (!empty($settings['subdir'])) {
 			$subdir = $settings['subdir'];
 		}
-		if (!$basedir = realpath(UPLOAD_STORAGE_FOLDER)) {
-			throw new Error('Invalid UPLOAD_STORAGE_FOLDER [' . UPLOAD_STORAGE_FOLDER . ']');
-		}
-		$url_path = UPLOAD_URL_PATH;
 		$baseurl = home_url($url_path);
 		$path = $basedir . $subdir;
 		$url = $baseurl . $subdir;
