@@ -17,6 +17,5 @@ function suppress_admin_menu() {
     add_action('admin_menu', function() use ($method, $args) {
       call_user_func_array($method, $args);
     });
-
   }
 }
