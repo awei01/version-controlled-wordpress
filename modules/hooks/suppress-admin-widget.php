@@ -3,16 +3,17 @@
 function suppress_admin_widget() {
   add_action('wp_dashboard_setup', function() {
     global $wp_meta_boxes;
-    if (getenv('SUPPRESS_ADMIN_WIDGET__DASHBOARD_RIGHT_NOW')) {
+    $config = getenv_array('SUPPRESS_ADMIN_WIDGET');
+    if (!empty($config['dashboard_right_now'])) {
       unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
     }
-    if (getenv('SUPPRESS_ADMIN_WIDGET__DASHBOARD_ACTIVITY')) {
+    if (!empty($config['dashboard_activity'])) {
       unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
     }
-    if (getenv('SUPPRESS_ADMIN_WIDGET__DASHBOARD_QUICK_PRESS')) {
+    if (!empty($config['dashboard_quick_press'])) {
       unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
     }
-    if (getenv('SUPPRESS_ADMIN_WIDGET__DASHBOARD_PRIMARY')) {
+    if (!empty($config['dashboard_primary'])) {
       unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
     }
   });
