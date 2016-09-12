@@ -15,6 +15,7 @@ function automate_plugins_management() {
   }
 
   $plugins = array_keys(get_plugins());
+
   if (!array_diff($plugins, $active)) {
     // all of the plugins are already activated
     return;
