@@ -7,7 +7,8 @@ if (!getenv('FILE_CACHE__enabled')) {
 } else {
   // we can safely define our function here
   function wp_cache_init() {
-    $path = realpath(getenv('FILE_CACHE__storage_path') ?: ROOT_DIR . 'storage/cache');
+    $path = getenv('FILE_CACHE__storage_path') ?: ROOT_DIR . 'storage/cache';
+    $path = realpath($path);
     $GLOBALS['wp_object_cache'] = new WP_Object_Cache($path);
   }
 }
