@@ -10,6 +10,11 @@ if (!realpath($path)) {
   throw new Exception('Invalid storage path for sqlite');
 }
 
+add_action('admin_init', function() {
+  // suppress from admin menu
+  remove_submenu_page('options-general.php', 'sqlite-integration');
+});
+
 define('USE_MYSQL', false);
 define('DB_DIR', $path);
 define('DB_FILE', $filename);
