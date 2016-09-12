@@ -14,5 +14,5 @@
 require ROOT_DIR . '/configure/hooks.php';
 
 // next, load our hooks
-require ROOT_DIR . '/modules/hooks/load.php';
+require ROOT_DIR . '/modules/hooks/init.php';
 
