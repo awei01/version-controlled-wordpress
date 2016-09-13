@@ -96,6 +96,41 @@ Plugins and themes are now managed via the `composer.json` file.
 * If you've installed a plugin and you're using file-based caching, you'll need to delete the cache first: `rm -rf storage/cache/*`
 * Browse to your site again and your new plugins will be activated.
 
+## Migrating an Existing Wordpress Installation
+Here are some suggestions on migrating your existing installation. These instructions all assume you're using the default configurations for this repository.
+
+### Backup
+* You should cover your ass by backing up the existing installation. Use `mysqldump` to get a full dump of your database. Compress and save the existing codebase, including your `uploads` folder.
+
+### Setup
+* Create a new local development environment using this repository.
+* Modify `composer.json` so that the version of `johnpbloch/wordpress` matches your current installation.
+
+### Plugins
+* Search for your plugins on http://wpackagist.org and add them to your `composer.json`. You'll probably want the exact versions that you have already installed on your existing application. If you want to try a later plugin version, you can give it a shot. It should be trivial to switch between plugin versions.
+* If you've made code-related customizations to your plugins, you can copy these directly into the `wp-plugins` folder and update `.gitignore` files so that these customizations are saved in your repository. In this case, do not add the plugin to your `composer.json`.
+
+### Themes
+* Same as plugins; find the appropriate module and add them to your `composer.json`.
+* If you've made code-related customizations to your themes, copy these directly into the `wp-themes` folder and update `.gitignore` files so that these customizations are saved in your repository.
+* If you've made theme customizations and you know you're not going to switch themes going forward, you can just copy your theme files into `/theme` and it will just show up as the `default` theme.
+
+### Preview
+* Fire up apache and browse to your local server. You will be prompted to create a new Wordpress installation.
+
+### Migrating Content
+At this point, you should have a clean install of your site. Of course, your posts, pages, comments, etc., will not have been migrated yet.
+
+#### Simple Export/Import
+* Leverage the default Wordpress exporting capabilities by going to the admin interface of your production environment and navigating to `Tools > Export`.
+* Download the export file and save it on your development machine.
+* Install the `wpackagist-plugin/wordpress-importer` in your `composer.json` on your local environment.
+* On your environment admin interface, you can now go to `Tools > Import` and follow the instructions to import the file you just downloaded.
+
+#### Advanced Export/Import
+* Use the `mysqldump` script from your production environment and replicate the MySQL database locally.
+* You'll need to convert your MySQL script to SQLite somehow. I've used the tool `RazorSQL` (free for 30 days) with some success.
+* Copy your `uploads` directory into the `/storage/uploads` folder. Now all your images should exist on your server.
 
 
 ## Suggestions and Pull Requests are welcomed
