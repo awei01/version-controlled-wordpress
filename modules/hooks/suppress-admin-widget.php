@@ -1,9 +1,12 @@
 <?php
 
 function suppress_admin_widget() {
-  add_action('wp_dashboard_setup', function() {
+  $config = getenv_array('SUPPRESS_ADMIN_WIDGET');
+  if (!$config) {
+    return;
+  }
+  add_action('wp_dashboard_setup', function() use ($config) {
     global $wp_meta_boxes;
-    $config = getenv_array('SUPPRESS_ADMIN_WIDGET');
     if (!empty($config['dashboard_right_now'])) {
       unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
     }
