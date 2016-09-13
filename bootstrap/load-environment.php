@@ -33,7 +33,7 @@ function getenv_array($namespace, $separator = '__') {
   }
   $result = array();
   foreach ($_ENV as $key => $value) {
-    if (preg_match('/^' . $namespace . $separator . '(\w+)$/', $key, $matches)) {
+    if (preg_match('/^' . $namespace . $separator . '([\w\-]+)$/', $key, $matches)) {
       $result[$matches[1]] = $value;
     }
   }
