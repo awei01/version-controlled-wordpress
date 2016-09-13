@@ -104,7 +104,7 @@ Here are some suggestions on migrating your existing installation. These instruc
 
 ### Setup
 * Create a new local development environment using this repository.
-* Modify `composer.json` so that the version of `johnpbloch/wordpress` matches your current installation.
+* Modify `composer.json` so that the version of `johnpbloch/wordpress` matches your current installation. * If you want to upgrade your Wordpress core version, I suggest doing it after migration is complete.
 
 ### Plugins
 * Search for your plugins on http://wpackagist.org and add them to your `composer.json`. You'll probably want the exact versions that you have already installed on your existing application. If you want to try a later plugin version, you can give it a shot. It should be trivial to switch between plugin versions.
